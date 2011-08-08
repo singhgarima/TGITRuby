@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title
+      = "Ruby TGIT Treasure Hunt"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+    = yield(:head)
+  %body
+    #container
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
+      #head
+        %h1= "Ruby TGIT Treasure Hunt"
+      #content
+        = yield
