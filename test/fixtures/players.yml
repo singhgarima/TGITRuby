@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  member_one: MyString
+  role_one: MyString
+  member_two: MyString
+  role_two: MyString
+  questions_attempted: 1
+
+two:
+  member_one: MyString
+  role_one: MyString
+  member_two: MyString
+  role_two: MyString
+  questions_attempted: 1
