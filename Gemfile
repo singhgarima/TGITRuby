@@ -6,4 +6,4 @@ gem 'sqlite3'
 gem 'haml'
 gem 'haml-rails'
 gem "nifty-generators", :group => :development
-
+gem 'devise'

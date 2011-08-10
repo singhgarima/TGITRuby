@@ -1,0 +1,8 @@
+%h3
+  = "Question #{@question.id}"
+%br/
+= @question.value
+= form_tag questions_check_path(@question.id), :method => :post do
+  = label_tag :answer
+  = text_field_tag :answer
+  = submit_tag
