@@ -7,19 +7,19 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
     = yield(:head)
-  %body
+  %body.mynewfont_normal
     %span#atul
       = image_tag "atul.png"
     #container
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
       #head
-        %h1= "Ruby TGIT Treasure Hunt"
+        %h1.mynewfont
+          = "Ruby TGIT Treasure Hunt"
       #breadcrumb
         %p.notice
           = notice
         %p.alert
-          = alert
-        
+          = alert       
       #content
         = yield
