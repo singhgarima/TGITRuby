@@ -4,11 +4,13 @@ class QuestionsController < ApplicationController
 
   def solve
     to_attempt = params[:attempted].to_i + 1 
-    @question = Question.find(to_attempt)
+    @question = Question.find_by_id(to_attempt)
+    redirect_to completed_path if @question.blank?
   end
 
   def check
     @question = Question.find(params[:attempted])
+    redirect_to completed_path if @question.blank?
     if @question.answer.to_s == params[:answer].to_s
       current_team.questions_attempted = current_team.questions_attempted.to_i + 1 
       current_team.save
