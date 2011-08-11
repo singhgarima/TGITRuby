@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110810032555) do
+ActiveRecord::Schema.define(:version => 20110811073435) do
 
   create_table "levels", :force => true do |t|
     t.integer  "number"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20110810032555) do
 
   create_table "questions", :force => true do |t|
     t.text     "value"
-    t.string   "answer"
+    t.text     "answer",     :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
