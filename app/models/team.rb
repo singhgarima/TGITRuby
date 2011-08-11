@@ -4,4 +4,6 @@ class Team < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :trackable
 
   attr_accessible :email, :member_one, :role_one, :member_two, :role_two, :password, :password_confirmation
+
+  validates_presence_of :member_one, :role_one, :email, :password, :password_confirmation
 end

@@ -9,5 +9,7 @@ TGITRuby::Application.routes.draw do
   match "teams" => "teams#create", :as => :teams, :via => :post
   match "completed" => "home#completed", :as => :completed, :via => :get
 
+  match "projects/:project_name/developers/:dev_id/tasks/:task_id" => "questions#route_get_test", :via => :get
+
   root :to => "home#index"
 end

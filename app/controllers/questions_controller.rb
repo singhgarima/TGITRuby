@@ -3,7 +3,8 @@ class QuestionsController < ApplicationController
   before_filter :authenticate_team!
 
   def solve
-    to_attempt = params[:attempted].to_i + 1 
+    to_attempt = params[:attempted].to_i + 1
+    redirect_to questions_solve_path(current_team.questions_attempted.to_i) and return if params[:attempted].to_i != current_team.questions_attempted.to_i
     @question = Question.find_by_id(to_attempt)
     redirect_to completed_path if @question.blank?
   end
